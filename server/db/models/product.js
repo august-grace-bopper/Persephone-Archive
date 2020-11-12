@@ -1,6 +1,11 @@
 const Sequelize = require('sequelize')
 const db = require('../db')
 
+// Can we add more validations to make this a more robust model?
+// Some examples: minimum on quantity (do we want to allow it to dip below 0?)
+// Are empty values okay?
+// Are categories from a specific list? (ENUM)
+// What does "onHold" refer to?
 const Product = db.define('product', {
   name: {
     type: Sequelize.STRING,

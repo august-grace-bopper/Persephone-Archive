@@ -21,6 +21,8 @@ const checkout = () => ({type: CHECKOUT})
 /**
  * THUNK CREATORS
  */
+
+ // is there a way to know that I'm already logged in without making a call to the backend?
 export const fetchCart = () => async (dispatch) => {
   try {
     const res = await axios.get('/auth/me')
@@ -36,6 +38,7 @@ export const fetchCart = () => async (dispatch) => {
   }
 }
 
+// little typo: watch the `//` in your route
 export const deleteThunk = () => async (dispatch) => {
   try {
     const res = await axios.get('/auth/me')

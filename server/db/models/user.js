@@ -2,6 +2,7 @@ const crypto = require('crypto')
 const Sequelize = require('sequelize')
 const db = require('../db')
 
+// It may be difficult to maintain the cart as an array on this table (think about adding, deleting, editing, etc.) - is there another way?
 const User = db.define('user', {
   firstName: {
     type: Sequelize.STRING,

@@ -11,6 +11,7 @@ router.get('/', async (req, res, next) => {
   }
 })
 
+// would findByPk be a cleaner way to do this?
 router.get('/:userId', async (req, res, next) => {
   try {
     const user = await User.findOne({

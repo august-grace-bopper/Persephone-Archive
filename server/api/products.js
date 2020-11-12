@@ -11,6 +11,7 @@ router.get('/', async (req, res, next) => {
   }
 })
 
+// would findByPk be a cleaner way to do this?
 router.get('/:productId', async (req, res, next) => {
   try {
     const product = await Product.findAll({

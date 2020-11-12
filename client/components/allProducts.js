@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import {connect} from 'react-redux'
 import {fetchProducts} from '../store/products'
 
+// convert to a functional component?
 class AllProducts extends React.Component {
   componentDidMount() {
     this.props.fetchProducts()

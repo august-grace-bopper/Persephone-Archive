@@ -3,7 +3,8 @@ import {connect} from 'react-redux'
 import { fetchSingleProduct } from '../store/singleProduct'
 
 
-
+// prettier can be helpful to add to your workflow. Watch for differences in formatting from different commits
+// convert to a functional component?
 class SingleProduct extends React.Component {
 
    componentDidMount(){

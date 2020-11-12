@@ -1,6 +1,8 @@
 const User = require('./user')
 const Product = require('./product')
 
+// it's good practice to remove commented out code when merging to your main branch
+
 // const sequelize= require('sequelize')
 
 /**

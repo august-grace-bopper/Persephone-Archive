@@ -2,6 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {getUsersThunk} from '../store'
 
+// convert to a functional component
 class AdminUsers extends React.Component {
   componentDidMount() {
     this.props.getUsers()
