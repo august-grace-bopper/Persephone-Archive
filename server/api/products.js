@@ -2,6 +2,9 @@ const router = require('express').Router()
 const {Product} = require('../db/models')
 module.exports = router
 
+// this commented out code is right! You will want to restrict some of these routes for admins
+// is there a central location we can put this adminsOnly function so it doesn't live in two files?
+
 // const adminsOnly = (req, res, next) => {
 //   if (!req.user.isAdmin) {
 //     const err = new Error('No access.')
@@ -38,12 +41,14 @@ router.get('/:productId', async (req, res, next) => {
   }
 })
 
+// convert to async/await
 router.post('/', (req, res, next) => {
   Product.create(req.body)
     .then(product => res.json(product))
     .catch(next)
 })
 
+// convert to async/await
 router.delete('/:productId', (req, res, next) => {
   Product.destroy({
     where: {

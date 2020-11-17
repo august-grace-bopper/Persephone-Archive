@@ -3,6 +3,9 @@ const {User} = require('../db/models')
 
 module.exports = router
 
+// Is there some other protection we can add here? I should only be able to get, put, patch, and delete my own user, not anyone else. Admins can edit anyone.
+
+// Another instance of this function already exists. Can we consolidate these to a central location?
 const adminsOnly = (req,res,next) => {
   if (!req.user.isAdmin) {
     const err = new Error('No access.')
@@ -67,6 +70,7 @@ router.patch('/:userId', async (req, res, next) => {
   }
 })
 
+// convert to async/await
 router.delete('/:userid', adminsOnly, (req, res, next) => { 
  req.User.destroy()
   .then(() => {

@@ -3,6 +3,8 @@ const {Order, Product, OrderItem} = require('../db/models')
 module.exports = router
 const {Op} = require('sequelize')
 
+// do these routes also need protection?
+
 router.get('/', async (req, res, next) => {
   try {
     const orders = await Order.findAll()

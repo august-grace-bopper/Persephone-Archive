@@ -25,6 +25,8 @@ class AllProducts extends React.Component {
     })
   }
 
+  // I'd move the definition of categories outside of the render, no need to redefine this variable every time render is called
+  // do we need the opt variable? Or can we set those keys in line 54?
   render() {
     const products =
       this.state.category === 'all'

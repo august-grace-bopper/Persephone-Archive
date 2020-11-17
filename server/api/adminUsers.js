@@ -33,6 +33,7 @@ router.put('/:userId', async (req, res, next) => {
   }
 })
 
+// convert to async / await to match coding styling of project
 router.delete('/:userid', adminsOnly, (req, res, next) => { 
   req.User.destroy()
    .then(() => {

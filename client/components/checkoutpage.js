@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 import {logout, fetchCart, deleteThunk} from '../store'
 
+// extra idea: can we use the random function to make the order id more random?
 const checkoutpage = ({checkout, cart, isLoggedIn, loadCart}) => {
   return (
     <div>

@@ -7,6 +7,7 @@ const GET_USER_CART = 'GET_USER_CART'
 const CHECKOUT = 'CHECKOUT'
 const ADD_TO_CART = 'ADD_TO_CART'
 const DELETE_CART_PRODUCT = 'DELETE_CART_PRODUCT'
+// there is a trailing space in the below action type
 const GET_GUEST_CART = 'GET_GUEST_CART '
 const ADD_TO_CART_GUEST = 'ADD_TO_CART_GUEST'
 const DELETE_CART_PRODUCT_GUEST = 'DELETE_CART_PRODUCT_GUEST'
@@ -84,6 +85,7 @@ export const deleteThunk = productId => async dispatch => {
   }
 }
 
+// could using JSON.parse simplify the logic for all the guest functions?
 export const fetchGuestCart = () => async dispatch => {
   try {
     const unparsedCart = localStorage.getItem('cart')
@@ -140,6 +142,8 @@ export const deleteThunkGuest = productId => dispatch => {
 /**
  * REDUCER
  */
+
+ // what state change is needed after a checkout? Make an empty empty array?
 export default function(state = cart, action) {
   switch (action.type) {
     case GET_USER_CART:

@@ -2,6 +2,12 @@ const router = require('express').Router()
 const {Product, Order, OrderItem} = require('../db/models')
 module.exports = router
 
+// general note: can we use custom Sequelize class and instance methods to
+// 1) take some of this logic out of the routes
+// 2) reuse several functions needed in many routes (eg. findCartByUser)
+
+// shorter way to get user: req.user
+
 router.get('/', async (req, res, next) => {
   try {
     const cart = await Order.findOne({
