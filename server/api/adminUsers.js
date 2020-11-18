@@ -1,6 +1,5 @@
 const router = require('express').Router()
 const {User} = require('../db/models')
-module.exports = router
 
 
 const adminsOnly = (req, res, next) => {
@@ -12,7 +11,7 @@ const adminsOnly = (req, res, next) => {
   next()
 }
 
-router.get('/', adminsOnly, async (req, res, next) => {
+router.get('/', async (req, res, next) => {
   try {
     const users = await User.findAll({
       // attributes: {exclude: ['password', 'email', 'firstName', 'lastName', 'isAdmin']}
@@ -38,7 +37,7 @@ router.get('/:userId', async (req, res, next) => {
 })
 
 
-router.put('/:userId', adminsOnly, async (req, res, next) => {
+router.put('/:userId', async (req, res, next) => {
 
   try {
     const user = await User.findOne({
@@ -52,7 +51,7 @@ router.put('/:userId', adminsOnly, async (req, res, next) => {
 })
 
 
-router.delete('/:userid', adminsOnly, async (req, res, next) => {
+router.delete('/:userid', async (req, res, next) => {
   try {
     const user = await User.destroy({
       where: {
@@ -65,3 +64,4 @@ router.delete('/:userid', adminsOnly, async (req, res, next) => {
   }
 })
 
+module.exports = router

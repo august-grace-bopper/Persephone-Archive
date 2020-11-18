@@ -12,7 +12,7 @@ async function seed() {
       firstName: 'Gianni',
       lastName: 'LaTange',
       email: 'gianni@email.com',
-      password: '123'
+      password: '456'
     }),
     User.create({
       firstName: 'Madison',
@@ -24,33 +24,33 @@ async function seed() {
       firstName: 'Samantha',
       lastName: 'Jardanowski',
       email: 'sam@email.com',
-      password: '123',
+      password: '103',
       isAdmin: true
     }),
     User.create({
       firstName: 'Vivian',
       lastName: 'Xu',
       email: 'vivian@email.com',
-      password: '123'
+      password: '569'
     }),
     User.create({
       firstName: 'Patrick',
       lastName: 'Star',
       email: 'underarock@email.com',
-      password: '123'
+      password: '153'
     }),
     User.create({
       firstName: 'Robyn',
       lastName: 'Fenty',
       email: 'riri@email.com',
-      password: '123',
+      password: '009',
       isAdmin: true
     }),
     User.create({
       firstName: 'Ashlee',
       lastName: 'Fellow',
       email: 'ashlee@email.com',
-      password: '123',
+      password: '429',
       isAdmin: true
     })
   ])
